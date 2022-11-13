@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Form</title>
+    <title>Login Form</title>
 
     <!-- ================== BEGIN core-css ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -18,31 +18,32 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
                     <div class="card mb-3 m-auto">
-                        <div class="row g-0">
+                        <div class="row">
                             <div class="col-md d-none d-lg-block">
                                 <img src="assets/img/music-store.jpg" class="img-fluid rounded-start" alt="Music store">
                             </div>
                             <div class="col-md">
                                 <div class="card-body">
-                                <form>
-                                    <div class="d-flex justify-content-center align-items-center mt-5 h-100">
+                                <form action="scripts.php" method="POST" id="form-task">
+                                    <div class="d-flex justify-content-center align-items-center mt-3 h-100">
                                         <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                     </div>
-                                    <h4 class="mt-4 mb-3 fw-normal text-white text-center">Please login to your account</h4>
+                                    <h5 class="mt-4 mb-3 fw-normal text-white text-center">Please login to your account</h5>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label text-white">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                                     </div>
-                                    <div class="d-grid d-block mb-3">
-                                        <button type="submit" class="btn btn-danger btn-lg">Login</button>
+                                    <div class="d-grid d-block mb-4">
+                                        <button type="submit" name="login" class="btn btn-danger">Login</button>
                                     </div>
                                     <a class="text-light text-decoration-none" href="#!">Forgot password?</a>
-                                    <p class="mb-3 text-light">Don't have an account? <button class="btn btn-outline-danger btn-sm"><a href="#!" class="text-decoration-none text-white">Register here</a></button></p>
                                 </form>
+                                <p class="mb-3 text-light">Don't have an account? <button class="btn btn-outline-danger btn-sm">
+                                        <a href="registration.php" class="text-decoration-none text-white">Register here</a></button></p>
                                 </div>
                             </div>
                         </div>
