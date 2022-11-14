@@ -1,3 +1,7 @@
+<?php
+    include('scripts.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<!-- ================== END core-css ================== -->
 </head>
 <body>
@@ -29,6 +34,25 @@
                                         <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                                     </div>
                                     <h5 class="mt-4 mb-3 fw-normal text-white text-center">Please login to your account</h5>
+                                    <?php if (isset($_SESSION['message'])): ?>
+                                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                        <strong>Success!</strong>
+                                            <?php 
+                                                echo $_SESSION['message']; 
+                                                unset($_SESSION['message']);
+                                            ?>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                        <?php elseif (isset($_SESSION['message1'])): ?>
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>warning!</strong>
+                                            <?php 
+                                                echo $_SESSION['message1']; 
+                                                unset($_SESSION['message1']);
+                                            ?>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    <?php endif ?>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
                                         <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
