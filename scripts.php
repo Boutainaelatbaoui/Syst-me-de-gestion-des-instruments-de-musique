@@ -11,8 +11,8 @@
     if(isset($_POST['login'])){
         loginAdmin();
     }
-    if(isset($_POST['delete'])){
-        
+    if(isset($_POST['logout'])){
+        logoutAdmin();
     }
 
     function registerAdmin(){
@@ -81,9 +81,8 @@
                 if ($admin['email'] === $email && $admin['password'] === $password) {
 
                     $_SESSION['message'] = "Logged in!";
+                    header('location: login.php');
                     
-                    
-
                     //Create session to store 
                     $_SESSION['name'] = $admin['name'];
                     $_SESSION['email'] = $admin['email'];
@@ -95,11 +94,20 @@
                     $_SESSION['message1'] = "Incorect password!!";
                     header('location: login.php');
                 }
-            }else{
+            }
+            else{
                 $_SESSION['message1'] = "Your email doesn't match with our records!";
                 header('location: login.php');
             }
         }
+    }
+
+    function logoutAdmin(){
+        echo "Hello";
+        session_unset();
+        session_destroy();
+
+        header("Location: login.php");
     }
 
 ?>
