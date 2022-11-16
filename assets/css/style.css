@@ -1,3 +1,4 @@
+
 section {
     /* background-color: rgba(11, 10, 10, 0.8); */
     background-image: url("../img/ticket.jpg");
@@ -13,15 +14,34 @@ div.card {
     min-height: -webkit-fill-available !important;
 }
 
-
-
-.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
-    
+:root {
+    --topNavbarHeight: 66px !important;
 }
 
-.offcanvas.offcanvas-start {
-    width: 270px;
+.sidebar-nav {
+    --bs-offcanvas-width: 270px !important;
+    top: var(--topNavbarHeight) !important;
 }
 
+.modal-backdrop{
+    display: none !important;
+}
 
+@media (min-width: 992px) {
+
+    .btn-close{
+        display: none !important;
+    }
+
+    .modal-backdrop{
+        display: none !important;
+    }
+
+    .sidebar-nav {
+        transform: none !important;
+        visibility: visible !important;
+        top: var(--topNavbarHeight) !important;
+        height: calc(100% - var(--topNavbarHeight)) !important;
+    }
+}
 
