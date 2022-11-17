@@ -256,7 +256,7 @@
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-task" enctype="multipart/form-data">
+				<form action="scripts.php" method="POST" id="form-product" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h5 class="modal-title">Add new instrument</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -290,7 +290,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Picture</label>
-                                <input class="form-control" type="file" name="picture" id="formFile">
+                                <input class="form-control" type="file" name="picture" id="product-picture">
                             </div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>

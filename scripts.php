@@ -133,7 +133,10 @@
             //Output data of each row
             while($row = mysqli_fetch_assoc($result)){
                 echo '<div class="col">
-                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal" onclick="editTask()">
+                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal"
+                id="'.$row["id"].'" title="'.$row["name"].'" category="'.$row["category_id"].'" quantity="'.$row["quantity"].'"
+                price="'.$row["price"].'" description="'.$row["description"].'" picture="'.$row['filename'].'"
+                onclick="editTask('.$row["id"].')">
                     <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(image/'.$row['filename'].');"></div>
                     <div class="card-body">
                         <h5 class="card-title text-center text-truncate fw-bolder mb-3">'.$row["name"].'</h5>
@@ -185,7 +188,7 @@
     }
 
     function updateProducts(){
-
+        
     }
 
     function deleteProducts(){
