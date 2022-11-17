@@ -103,7 +103,6 @@
     }
 
     function logoutAdmin(){
-        echo "Hello";
         session_unset();
         session_destroy();
 

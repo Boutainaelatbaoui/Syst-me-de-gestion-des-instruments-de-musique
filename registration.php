@@ -22,7 +22,7 @@
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
-                    <div class="card mb-3 m-auto">
+                    <div class="card card-form mb-3 m-auto">
                         <div class="row">
                             <div class="col-md">
                                 <div class="card-body">

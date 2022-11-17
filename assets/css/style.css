@@ -4,10 +4,39 @@ section {
     background-image: url("../img/ticket.jpg");
 }
 
-div.card {
+.dash-body {
+    background-color: rgba(165, 162, 162, 0.3);
+}
+
+div.card-form{
     background-color: black;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     max-width: 900px;
+}
+
+.bx-shadow{
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.card-style{
+    z-index: -1;
+    position: absolute;
+    width: 60%;
+    height: 200%;
+    background-color: #db021b;
+    transform: skewX(43deg);
+}
+
+.box-card{
+    padding-top: 60px !important;
+}
+
+.image-logo{
+    position: absolute;
+    right: 30%;
+    top: 10px;
 }
 
 .img-fluid {
@@ -27,15 +56,41 @@ div.card {
     display: none !important;
 }
 
+button.navbar-toggler {
+    background-color: white;
+}
+
+#card1 {
+    max-width: 1250px;
+    background: rgb(231, 229, 229);
+    /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(153,6,45,1) 100%); */
+}
+
+main {
+    margin: 0 10px 0 8px;
+}
+
+.btn-close{
+    display: block;
+}
+
 @media (min-width: 992px) {
 
-    .btn-close{
-        display: none !important;
-    }
+    /* .btn-close{
+        display: none;
+    } */
 
     .modal-backdrop{
         display: none !important;
     }
+    
+    main {
+        margin-left: 280px;
+    }
+
+    /* .card-statis {
+        width: 248px;
+    } */
 
     .sidebar-nav {
         transform: none !important;
