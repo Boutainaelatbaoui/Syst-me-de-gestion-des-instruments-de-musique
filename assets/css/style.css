@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 section {
     /* background-color: rgba(11, 10, 10, 0.8); */
@@ -16,14 +21,14 @@ div.card-form{
 .bx-shadow{
     position: relative;
     overflow: hidden;
-    z-index: 9;
+    z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card-style{
     z-index: -1;
     position: absolute;
-    width: 60%;
+    width: 55%;
     height: 200%;
     background-color: #db021b;
     transform: skewX(43deg);
@@ -31,12 +36,17 @@ div.card-form{
 
 .box-card{
     padding-top: 60px !important;
+    height: 300px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .image-logo{
     position: absolute;
-    right: 30%;
-    top: 10px;
+    right: 45%;
+    top: 48px;
 }
 
 .img-fluid {

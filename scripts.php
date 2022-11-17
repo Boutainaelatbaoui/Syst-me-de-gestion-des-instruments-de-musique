@@ -14,6 +14,15 @@
     if(isset($_POST['logout'])){
         logoutAdmin();
     }
+    if(isset($_POST['save'])){
+        saveProducts();
+    };
+    if(isset($_POST['update'])){
+        updateProducts();
+    }
+    if(isset($_POST['delete'])){
+        deleteProducts();
+    }
 
     function registerAdmin(){
         global $conn;
@@ -109,4 +118,44 @@
         header("Location: login.php");
     }
 
+    function getProducts(){
+
+    }
+
+    function saveProducts(){
+        global $conn;
+        //CODE HERE
+        $title       = $_POST['name'];
+        $category    = $_POST['category'];
+        $price       = $_POST['price'];
+        $quantity    = $_POST['quantity'];
+        $description = $_POST['description'];
+
+        //Form validation
+        if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
+            $_SESSION['message1'] = "Please fill the form !";
+		    header('location: index.php');
+        }
+        else {
+            //SQL INSERT
+            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `filename`, `description`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')";
+
+            //checking if the Query is successful. 
+            if (mysqli_query($conn, $sql)) {
+                $_SESSION['message'] = "Task has been added successfully !";
+                header('location: index.php');
+            } else {
+                echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
+            }
+        }
+
+    }
+
+    function updateProducts(){
+
+    }
+
+    function deleteProducts(){
+
+    }
 ?>

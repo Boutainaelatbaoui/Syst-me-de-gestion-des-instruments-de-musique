@@ -142,7 +142,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 mt-5">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
@@ -150,7 +150,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-5">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
@@ -158,7 +158,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-5">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
@@ -166,7 +166,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-5">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
@@ -176,13 +176,36 @@
             </div>
         </div>
 
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
+            <strong>Success!</strong>
+                <?php 
+                    echo $_SESSION['message']; 
+                    unset($_SESSION['message']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php elseif (isset($_SESSION['message1'])): ?>
+            <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+            <strong>warning!</strong>
+                <?php 
+                    echo $_SESSION['message1']; 
+                    unset($_SESSION['message1']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif ?>
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
         <div class="col">
                 <div class="card bg-white mb-3">
                     <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
+                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
@@ -190,26 +213,35 @@
                 <div class="card bg-white mb-3">
                     <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
+                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card bg-white mb-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
+                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card bg-white mb-3">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
+                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
@@ -233,7 +265,14 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<input type="text" class="form-control" name="category" id="product-category">
+								<select class="form-select" name="category" id="product-category">
+									<option value="">Please select</option>
+									<option value="1">String Instruments</option>
+									<option value="2">Percussion Instruments</option>
+									<option value="3">Keyboard Instruments</option>
+									<option value="4">Brass/Wind Instruments</option>
+								</select>
+								<div class="text-danger fw-bolder" id="invalid-priority" style="display: none;"> * Please choose a priority !! </div>
 							</div>
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
