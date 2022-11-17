@@ -93,7 +93,7 @@
                         <span class="ms-1"><i class="bi bi-chevron-compact-down"></i></span>
                     </a>
                     <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
+                        <div class="card card-body bg-dark">
                             <a href="#" class="nav-link active">
                                 <span><i class="bi bi-speedometer2"></i></span>
                                 <span>Dashboard</span>
@@ -197,7 +197,12 @@
         <?php endif ?>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
-            <div class="col">
+            <?php
+                //PHP CODE HERE
+                //DATA FROM getTasks() FUNCTION
+                getProducts();
+            ?>
+            <!-- <div class="col">
                     <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal" onclick="editTask()">
                         <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
                         <div class="card-body">
@@ -208,8 +213,8 @@
                             <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
                         </div>
                     </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
                 <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal">
                     <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
                     <div class="card-body">
@@ -244,14 +249,14 @@
                         <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
-            </div>
-            </div>
+            </div> -->
+        </div>
     </main>
     <!-- TASK MODAL -->
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-task">
+				<form action="scripts.php" method="POST" id="form-task" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h5 class="modal-title">Add new instrument</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -272,7 +277,6 @@
 									<option value="3">Keyboard Instruments</option>
 									<option value="4">Brass/Wind Instruments</option>
 								</select>
-								<div class="text-danger fw-bolder" id="invalid-priority" style="display: none;"> * Please choose a priority !! </div>
 							</div>
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
@@ -284,10 +288,10 @@
                                     <input type="number" class="form-control" name="quantity" min="1" id="product-quantity"/>
                                 </div>
                             </div>
-                            <!-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="formFile" class="form-label">Picture</label>
-                                <input class="form-control" type="file" id="formFile">
-                            </div> -->
+                                <input class="form-control" type="file" name="picture" id="formFile">
+                            </div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
 								<textarea class="form-control" rows="8" name="description" id="product-description"></textarea>

@@ -119,6 +119,33 @@
     }
 
     function getProducts(){
+        global $conn;
+        //CODE HERE
+        //SQL SELECT
+        $sql = "SELECT products.*,
+                categories.name as `category`
+                FROM `products`
+                INNER JOIN `categories` on products.category_id = categories.id";
+
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) > 0){
+            //Output data of each row
+            while($row = mysqli_fetch_assoc($result)){
+                echo '<div class="col">
+                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal" onclick="editTask()">
+                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(image/'.$row['filename'].');"></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-truncate fw-bolder mb-3">'.$row["name"].'</h5>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Category: </span>'.$row["category"].'</p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Quantity: </span>'.$row["quantity"].'</p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Price: </span>'.$row["price"].'</p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Description: </span>'.$row["description"].'</p>
+                    </div>
+                </div>
+        </div>';
+            }
+        }
 
     }
 
@@ -130,6 +157,9 @@
         $price       = $_POST['price'];
         $quantity    = $_POST['quantity'];
         $description = $_POST['description'];
+        $filename = $_FILES["picture"]["name"];
+        $tempname = $_FILES["picture"]["tmp_name"];
+        $folder = "image/". $filename;
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
@@ -138,10 +168,13 @@
         }
         else {
             //SQL INSERT
-            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`) VALUES ('$title','$category','$quantity','$price','$description')";
+            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+
+            $result = mysqli_query($conn, $sql);
 
             //checking if the Query is successful. 
-            if (mysqli_query($conn, $sql)) {
+            if ($result) {
+                move_uploaded_file($tempname, $folder);
                 $_SESSION['message'] = "Task has been added successfully !";
                 header('location: index.php');
             } else {
