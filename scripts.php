@@ -188,10 +188,59 @@
     }
 
     function updateProducts(){
-        
+        global $conn;
+        //CODE HERE
+        $id          = $_POST['product-id'];
+        $title       = $_POST['title'];
+        $category    = $_POST['category'];
+        $price       = $_POST['price'];
+        $quantity    = $_POST['quantity'];
+        $description = $_POST['description'];
+        $filename = $_FILES["picture"]["name"];
+        $tempname = $_FILES["picture"]["tmp_name"];
+        $folder = "image/". $filename;
+
+        //Form validation
+        if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
+            $_SESSION['message1'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
+		    header('location: index.php');
+        }
+        else {
+            //SQL UPDATE
+            $sql = "UPDATE `products`
+                    SET `name`='$title',`category_id`='$category',
+                    `quantity`='$quantity',`price`='$price',`description`='$description',
+                    `filename`='$filename'
+                    WHERE id = $id";
+
+            $result = mysqli_query($conn, $sql);
+
+            //checking if the Query is successful. 
+            if ($result) {
+                move_uploaded_file($tempname, $folder);
+                $_SESSION['message'] = "Task has been added successfully !";
+                header('location: index.php');
+            } else {
+                echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
+            }
+        }
     }
 
     function deleteProducts(){
+        global $conn;
+        //CODE HERE
+        $id  = $_POST['product-id'];
 
+        //SQL DELETE
+        $sql = "DELETE FROM products WHERE id = $id";
+
+        //checking if the Query is successful. 
+        if (mysqli_query($conn, $sql)) {
+            $_SESSION['message'] = "Task has been deleted successfully !";
+		    header('location: index.php');
+        } else {
+            $_SESSION['message1'] = "Task has not been deleted !";
+		    header('location: index.php');
+        }
     }
 ?>
