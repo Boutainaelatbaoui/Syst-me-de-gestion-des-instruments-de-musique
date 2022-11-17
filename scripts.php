@@ -125,7 +125,7 @@
     function saveProducts(){
         global $conn;
         //CODE HERE
-        $title       = $_POST['name'];
+        $title       = $_POST['title'];
         $category    = $_POST['category'];
         $price       = $_POST['price'];
         $quantity    = $_POST['quantity'];
@@ -133,12 +133,12 @@
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
-            $_SESSION['message1'] = "Please fill the form !";
+            $_SESSION['message1'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
 		    header('location: index.php');
         }
         else {
             //SQL INSERT
-            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `filename`, `description`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')";
+            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`) VALUES ('$title','$category','$quantity','$price','$description')";
 
             //checking if the Query is successful. 
             if (mysqli_query($conn, $sql)) {

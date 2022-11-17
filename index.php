@@ -135,10 +135,10 @@
         <div class="card text-center bx-shadow" id="card1">
             <div class="card-style"></div>
             <div class="card-body box-card">
-                <span class="card-title"><img src="assets/img/logo.png" alt="Bootstrap" class="image-logo" width="150" height="40"></span>
-                <p class="card-text fs-5 mt-2">Welcome to <span class="fw-bolder">Rock shop!</span> Are you looking for new music equipment? Here in our online shop, you'll find both inexpensive instruments for beginners
+                <span class="card-title"><img src="assets/img/logo.png" alt="Bootstrap" class="image-logo d-flex justify-content-center align-items-center" width="150" height="40"></span>
+                <p class="card-text fs-5 mt-1">Welcome to <span class="fw-bolder">Rock shop!</span> Are you looking for new music equipment? Here in our online shop, you'll find both inexpensive instruments for beginners
                     and top-class professional equipment. We also offer a wide range of services - both online and in our store.</p>
-                <a href="#modal-product" data-bs-toggle="modal" class="btn btn-dark" onclick="addProduct()">Add Product</a>
+                <a href="#modal-product" data-bs-toggle="modal" class="btn btn-dark mb-5" onclick="addProduct()">Add Product</a>
             </div>
         </div>
         <div class="row">
@@ -177,7 +177,7 @@
         </div>
 
         <?php if (isset($_SESSION['message'])): ?>
-            <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
+            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
             <strong>Success!</strong>
                 <?php 
                     echo $_SESSION['message']; 
@@ -197,51 +197,51 @@
         <?php endif ?>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5">
-        <div class="col">
-                <div class="card bg-white mb-3">
-                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
+            <div class="col">
+                    <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal" onclick="editTask()">
+                        <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-truncate fs-4 fw-bolder mb-3">Card title</h5>
+                            <p class="card-text text-start"><span class="fw-bold text-muted">Category:</span></p>
+                            <p class="card-text text-start"><span class="fw-bold text-muted">Quantity:</span></p>
+                            <p class="card-text text-start"><span class="fw-bold text-muted">Price:</span></p>
+                            <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal">
+                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
                     <div class="card-body">
                         <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
-                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-white mb-3">
-                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
+                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal">
+                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
                     <div class="card-body">
                         <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
-                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-white mb-3">
-                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
+                <div class="card btn bg-white mb-3 p-0" href="#modal-product" data-bs-toggle="modal">
+                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('assets/img/drump.jpg');"></div>
                     <div class="card-body">
                         <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
-                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card bg-white mb-3">
-                    <img src="assets/img/drump.jpg" class="card-img-top" height="300" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center fs-4 fw-bolder mb-3">Card title</h5>
-                        <p class="card-text"><span class="fw-bold text-muted">Category:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Quantity:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Price:</span></p>
-                        <p class="card-text"><span class="fw-bold text-muted">Description:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Category:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Quantity:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Price:</span></p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Description:</span></p>
                     </div>
                 </div>
             </div>
@@ -284,10 +284,10 @@
                                     <input type="number" class="form-control" name="quantity" min="1" id="product-quantity"/>
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="formFile" class="form-label">Picture</label>
                                 <input class="form-control" type="file" id="formFile">
-                            </div>
+                            </div> -->
 							<div class="mb-0">
 								<label class="form-label">Description</label>
 								<textarea class="form-control" rows="8" name="description" id="product-description"></textarea>
