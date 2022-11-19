@@ -139,11 +139,11 @@
                 onclick="editTask('.$row["id"].')">
                     <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(image/'.$row['filename'].');"></div>
                     <div class="card-body">
-                        <h5 class="card-title text-center text-truncate fw-bolder mb-3">'.$row["name"].'</h5>
+                        <h5 class="card-title text-center text-truncate fw-bolder mb-3 ">'.$row["name"].'</h5>
                         <p class="card-text text-start"><span class="fw-bold text-muted">Category: </span>'.$row["category"].'</p>
                         <p class="card-text text-start"><span class="fw-bold text-muted">Quantity: </span>'.$row["quantity"].'</p>
-                        <p class="card-text text-start"><span class="fw-bold text-muted">Price: </span>'.$row["price"].'</p>
-                        <p class="card-text text-start"><span class="fw-bold text-muted">Description: </span>'.$row["description"].'</p>
+                        <p class="card-text text-start"><span class="fw-bold text-muted">Price: </span>'.$row["price"].' $</p>
+                        <p class="card-text text-start text-truncate"><span class="fw-bold text-muted">Description: </span>'.$row["description"].'</p>
                     </div>
                 </div>
         </div>';
@@ -166,7 +166,7 @@
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
-            $_SESSION['message1'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
+            $_SESSION['message2'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
 		    header('location: index.php');
         }
         else {
@@ -178,7 +178,7 @@
             //checking if the Query is successful. 
             if ($result) {
                 move_uploaded_file($tempname, $folder);
-                $_SESSION['message'] = "Task has been added successfully !";
+                $_SESSION['message3'] = "Task has been added successfully !";
                 header('location: index.php');
             } else {
                 echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
@@ -202,7 +202,7 @@
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
-            $_SESSION['message1'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
+            $_SESSION['message2'] = "Please fill the form !";
 		    header('location: index.php');
         }
         else {
@@ -218,7 +218,7 @@
             //checking if the Query is successful. 
             if ($result) {
                 move_uploaded_file($tempname, $folder);
-                $_SESSION['message'] = "Task has been added successfully !";
+                $_SESSION['message3'] = "Task has been updated successfully !";
                 header('location: index.php');
             } else {
                 echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
@@ -236,10 +236,10 @@
 
         //checking if the Query is successful. 
         if (mysqli_query($conn, $sql)) {
-            $_SESSION['message'] = "Task has been deleted successfully !";
+            $_SESSION['message3'] = "Task has been deleted successfully !";
 		    header('location: index.php');
         } else {
-            $_SESSION['message1'] = "Task has not been deleted !";
+            $_SESSION['message2'] = "Task has not been deleted !";
 		    header('location: index.php');
         }
     }

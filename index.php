@@ -176,21 +176,21 @@
             </div>
         </div>
 
-        <?php if (isset($_SESSION['message'])): ?>
+        <?php if (isset($_SESSION['message3'])): ?>
             <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
             <strong>Success!</strong>
                 <?php 
-                    echo $_SESSION['message']; 
-                    unset($_SESSION['message']);
+                    echo $_SESSION['message3']; 
+                    unset($_SESSION['message3']);
                 ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <?php elseif (isset($_SESSION['message1'])): ?>
+            <?php elseif (isset($_SESSION['message2'])): ?>
             <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
             <strong>warning!</strong>
                 <?php 
-                    echo $_SESSION['message1']; 
-                    unset($_SESSION['message1']);
+                    echo $_SESSION['message2']; 
+                    unset($_SESSION['message2']);
                 ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -272,16 +272,21 @@
 								<label class="form-label">Category</label>
 								<select class="form-select" name="category" id="product-category">
 									<option value="">Please select</option>
-									<option value="1">String Instruments</option>
-									<option value="2">Percussion Instruments</option>
-									<option value="3">Keyboard Instruments</option>
-									<option value="4">Brass/Wind Instruments</option>
+									<option value="1">Piano</option>
+									<option value="2">Guitar</option>
+									<option value="3">Drums</option>
+									<option value="4">Cello</option>
+                                    <option value="5">Clarinet</option>
+                                    <option value="6">Violin</option>
+                                    <option value="7">Flute</option>
+                                    <option value="8">Oud</option>
+                                    <option value="9">Tabla</option>
 								</select>
 							</div>
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Price</label>
-                                    <input type="number" class="form-control" name="price" min="1" id="product-price"/>
+                                    <input type="number" class="form-control" name="price" step="0.01" min="1" id="product-price"/>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Quantity</label>
