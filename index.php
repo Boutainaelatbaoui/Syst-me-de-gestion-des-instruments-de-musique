@@ -152,7 +152,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
                         <div><i class="bi bi-people fs-1 text-danger text-center"></i></div>
                         <div class="">
                             <h4 class="card-title">Total Admins</h4>
@@ -163,7 +163,7 @@
             </div>
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
                         <div><i class="bi bi-cart fs-1 text-danger text-center"></i></div>
                         <div>
                             <h4 class="card-title">Total Products</h4>
@@ -174,7 +174,7 @@
             </div>
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
                         <div><i class="bi bi-bar-chart-line fs-1 text-danger text-center"></i></div>
                         <div>
                             <h4 class="card-title">Stock</h4>
@@ -185,7 +185,7 @@
             </div>
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
                         <div><i class="bi bi-cash fs-1 text-danger text-center"></i></div>
                         <div>
                             <h4 class="card-title">Total Prices</h4>
