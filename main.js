@@ -3,7 +3,7 @@ function addProduct(){
     document.getElementById('product-update-btn').style.display = "none";
     document.getElementById('product-delete-btn').style.display = "none";
 
-    document.getElementById('product-task').reset();
+    document.getElementById('form-product').reset();
 }
 
 function editTask(id){
