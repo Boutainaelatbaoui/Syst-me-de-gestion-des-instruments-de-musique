@@ -149,7 +149,6 @@
         </div>';
             }
         }
-
     }
 
     function saveProducts(){
@@ -160,13 +159,13 @@
         $price       = $_POST['price'];
         $quantity    = $_POST['quantity'];
         $description = $_POST['description'];
-        $filename = $_FILES["picture"]["name"];
-        $tempname = $_FILES["picture"]["tmp_name"];
-        $folder = "image/". $filename;
+        $filename    = $_FILES["picture"]["name"];
+        $tempname    = $_FILES["picture"]["tmp_name"];
+        $folder      = "image/". $filename;
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
-            $_SESSION['message2'] = "Please fill the form !".$title." ".$category." ".$price." ".$quantity." ".$description;
+            $_SESSION['message2'] = "Please fill the form !";
 		    header('location: index.php');
         }
         else {
@@ -187,6 +186,46 @@
 
     }
 
+    function statisqueVente($number){
+        global $conn;
+        //CODE HERE
+        if($number == 1){
+            $sql = "SELECT COUNT(name) as total
+                    FROM admins";
+
+            $result = mysqli_query($conn, $sql);
+            $data   = mysqli_fetch_assoc($result);
+            echo $data['total'];
+        }
+
+        elseif($number == 2){
+            $sql = "SELECT COUNT(id) as product
+                    FROM products";
+
+            $result = mysqli_query($conn, $sql);
+            $data   = mysqli_fetch_assoc($result);
+            echo $data['product'];
+        }
+
+        elseif($number == 3){
+            $sql = "SELECT sum(quantity) as quantity
+                    FROM products";
+
+            $result = mysqli_query($conn, $sql);
+            $data   = mysqli_fetch_assoc($result);
+            echo $data['quantity'];
+        }
+
+        else{
+            $sql = "SELECT sum(price) as prices
+                    FROM products";
+
+            $result = mysqli_query($conn, $sql);
+            $data   = mysqli_fetch_assoc($result);
+            echo $data['prices'];
+        }
+    }
+
     function updateProducts(){
         global $conn;
         //CODE HERE
@@ -196,9 +235,9 @@
         $price       = $_POST['price'];
         $quantity    = $_POST['quantity'];
         $description = $_POST['description'];
-        $filename = $_FILES["picture"]["name"];
-        $tempname = $_FILES["picture"]["tmp_name"];
-        $folder = "image/". $filename;
+        $filename    = $_FILES["picture"]["name"];
+        $tempname    = $_FILES["picture"]["tmp_name"];
+        $folder      = "image/". $filename;
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
@@ -207,21 +246,40 @@
         }
         else {
             //SQL UPDATE
-            $sql = "UPDATE `products`
-                    SET `name`='$title',`category_id`='$category',
-                    `quantity`='$quantity',`price`='$price',`description`='$description',
-                    `filename`='$filename'
-                    WHERE id = $id";
+            if (empty($filename)) {
+                $sql = "UPDATE `products`
+                SET `name`='$title',`category_id`='$category',
+                `quantity`='$quantity',`price`='$price',`description`='$description'
+                WHERE id = $id";
 
-            $result = mysqli_query($conn, $sql);
+                $result = mysqli_query($conn, $sql);
 
-            //checking if the Query is successful. 
-            if ($result) {
-                move_uploaded_file($tempname, $folder);
-                $_SESSION['message3'] = "Task has been updated successfully !";
-                header('location: index.php');
-            } else {
-                echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
+                //checking if the Query is successful. 
+                if ($result) {
+                    // move_uploaded_file($tempname, $folder);
+                    $_SESSION['message3'] = "Task has been updated successfully !";
+                    header('location: index.php');
+                } else {
+                    echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
+                }
+            }
+            else{
+                $sql = "UPDATE `products`
+                SET `name`='$title',`category_id`='$category',
+                `quantity`='$quantity',`price`='$price',`description`='$description',
+                `filename`='$filename'
+                WHERE id = $id";
+
+                $result = mysqli_query($conn, $sql);
+
+                //checking if the Query is successful. 
+                if ($result) {
+                    move_uploaded_file($tempname, $folder);
+                    $_SESSION['message3'] = "Task has been updated successfully !";
+                    header('location: index.php');
+                } else {
+                    echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
+                }
             }
         }
     }

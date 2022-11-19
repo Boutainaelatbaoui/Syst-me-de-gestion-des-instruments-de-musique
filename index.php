@@ -144,34 +144,46 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mt-5">
-                <div class="card card-statis bg-black text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                        <div><i class="bi bi-people fs-1 text-danger text-center"></i></div>
+                        <div class="">
+                            <h4 class="card-title">Total Admins</h4>
+                            <p class="card-text fs-5"><?php statisqueVente(1); ?> Admins</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                        <div><i class="bi bi-cart fs-1 text-danger text-center"></i></div>
+                        <div>
+                            <h4 class="card-title">Total Products</h4>
+                            <p class="card-text fs-5"><?php statisqueVente(2); ?> Products</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card card-statis bg-black text-white">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                        <div><i class="bi bi-bar-chart-line fs-1 text-danger text-center"></i></div>
+                        <div>
+                            <h4 class="card-title">Stock</h4>
+                            <p class="card-text fs-5"><?php statisqueVente(3); ?> Quantity</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-5">
+                <div class="card card-statis bg-black text-white">
+                    <div class="card-body d-flex flex-row justify-content-around align-items-center">
+                        <div><i class="bi bi-cash fs-1 text-danger text-center"></i></div>
+                        <div>
+                            <h4 class="card-title">Total Prices</h4>
+                            <p class="card-text fs-5"><?php statisqueVente(4); ?> $</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
