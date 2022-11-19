@@ -15,9 +15,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
-    
-    
 	<!-- ================== END core-css ================== -->
+    <!-- BEGIN parsley css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
+    <!-- END parsley css-->
+    <!-- BEGIN jquery js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- END jquery js-->
+    <!-- BEGIN parsley js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- END parsley js-->
 </head>
 <body class="dash-body">
     <!-- BEGIN navbar -->
@@ -268,7 +276,7 @@
 	<div class="modal fade" id="modal-product">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="scripts.php" method="POST" id="form-product" enctype="multipart/form-data">
+				<form action="scripts.php" method="POST" id="form-product" enctype="multipart/form-data" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add new instrument</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -278,11 +286,11 @@
 							<input  type="hidden" name="product-id" id="product-id">
 							<div class="mb-3">
 								<label class="form-label">Name</label>
-								<input type="text" class="form-control" name="title" id="product-title"/>
+								<input type="text" class="form-control" name="title" id="product-title" required/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<select class="form-select" name="category" id="product-category">
+								<select class="form-select" name="category" id="product-category" required>
 									<option value="">Please select</option>
 									<option value="1">Piano</option>
 									<option value="2">Guitar</option>
@@ -298,11 +306,11 @@
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Price</label>
-                                    <input type="number" class="form-control" name="price" step="0.01" min="1" id="product-price"/>
+                                    <input type="number" class="form-control" name="price" step="0.01" min="1" id="product-price" required/>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" name="quantity" min="1" id="product-quantity"/>
+                                    <input type="number" class="form-control" name="quantity" min="1" id="product-quantity" required/>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -311,7 +319,7 @@
                             </div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="8" name="description" id="product-description"></textarea>
+								<textarea class="form-control" rows="8" name="description" id="product-description" required></textarea>
 							</div>
 						
 					</div>
