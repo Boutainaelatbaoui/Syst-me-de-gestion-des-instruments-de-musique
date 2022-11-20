@@ -217,7 +217,7 @@
         }
 
         else{
-            $sql = "SELECT sum(price) as prices
+            $sql = "SELECT sum(price * quantity) as prices
                     FROM products";
 
             $result = mysqli_query($conn, $sql);
