@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="col-sm d-none d-md-block">
-                                <img src="assets/img/music-store1.jpg" class="img-fluid rounded-end" id="img" alt="Music store">
+                                <img src="assets/img/music-store1.jpg" class="img-fluid img-form rounded-end" id="img" alt="Music store">
                             </div>
                         </div>
                     </div>
