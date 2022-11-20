@@ -83,7 +83,7 @@
                         <div class="text-muted fw-bold">CORE</div>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="index.php" class="nav-link active mt-2">
                             <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                             <span>Dashboard</span>
                         </a>
@@ -140,7 +140,7 @@
     <!-- END Offcanvas -->
     
     <main class="mt-5 pt-5">
-        <div class="card text-center bx-shadow" id="card1">
+        <div class="card welcome-card text-center bx-shadow">
             <div class="card-style"></div>
             <div class="card-body box-card">
                 <span class="card-title"><img src="assets/img/logo.png" alt="Bootstrap" class="image-logo d-flex justify-content-center align-items-center" width="150" height="40"></span>
@@ -149,46 +149,46 @@
                 <a href="#modal-product" data-bs-toggle="modal" class="btn btn-dark mb-5" onclick="addProduct()">Add Product</a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 mt-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 mt-5">
+            <div class="col mb-3">
                 <div class="card card-statis bg-black text-white">
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-people fs-1 text-danger text-center"></i></div>
-                        <div class="">
-                            <h4 class="card-title">Total Admins</h4>
+                        <div><i class="bi bi-people fs-3 text-danger text-center"></i></div>
+                        <div class="text-truncate">
+                            <h5 class="card-title">Total Admins</h5>
                             <p class="card-text fs-5"><?php statisqueVente(1); ?> Admins</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 mt-5">
+            <div class="col mb-3">
                 <div class="card card-statis bg-black text-white">
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-cart fs-1 text-danger text-center"></i></div>
-                        <div>
-                            <h4 class="card-title">Total Products</h4>
+                        <div><i class="bi bi-cart fs-3 text-danger text-center"></i></div>
+                        <div class="text-truncate">
+                            <h5 class="card-title">Total Products</h5>
                             <p class="card-text fs-5"><?php statisqueVente(2); ?> Products</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 mt-5">
+            <div class="col mb-3">
                 <div class="card card-statis bg-black text-white">
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-bar-chart-line fs-1 text-danger text-center"></i></div>
-                        <div>
-                            <h4 class="card-title">Stock</h4>
+                        <div><i class="bi bi-bar-chart-line fs-3 text-danger text-center"></i></div>
+                        <div class="text-truncate">
+                            <h5 class="card-title">Stock</h5>
                             <p class="card-text fs-5"><?php statisqueVente(3); ?> Quantity</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 mt-5">
+            <div class="col">
                 <div class="card card-statis bg-black text-white">
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-cash fs-1 text-danger text-center"></i></div>
-                        <div>
-                            <h4 class="card-title">Total Prices</h4>
+                        <div><i class="bi bi-cash fs-3 text-danger text-center"></i></div>
+                        <div class="text-truncate">
+                            <h5 class="card-title">Total Prices</h5>
                             <p class="card-text fs-5"><?php statisqueVente(4); ?> $</p>
                         </div>
                     </div>
