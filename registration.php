@@ -83,7 +83,7 @@
                                         <a href="login.php" class="text-decoration-none text-white text-center">Login</a></button></p>
                                 </div>
                             </div>
-                            <div class="col-md d-none d-lg-block">
+                            <div class="col-sm d-none d-md-block">
                                 <img src="assets/img/music-store1.jpg" class="img-fluid rounded-end" id="img" alt="Music store">
                             </div>
                         </div>
