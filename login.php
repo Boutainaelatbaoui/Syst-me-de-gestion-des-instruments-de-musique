@@ -65,11 +65,10 @@
                                     <?php endif ?>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
-                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                                    </div>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required data-parsley-type="email"
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label text-white">Password</label>
-                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" required data-parsley-trigger="keyup">
                                     </div>
                                     <div class="d-grid d-block mb-4">
                                         <button type="submit" name="login" class="btn btn-danger">Login</button>
