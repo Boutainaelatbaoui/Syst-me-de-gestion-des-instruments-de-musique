@@ -161,7 +161,9 @@
         $description = $_POST['description'];
         $filename    = $_FILES["picture"]["name"];
         $tempname    = $_FILES["picture"]["tmp_name"];
-        $folder      = "image/". $filename;
+    
+        //unique id img
+        
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
@@ -169,8 +171,19 @@
 		    header('location: index.php');
         }
         else {
+            if(empty($filename)){
+                $filename = "MUSIC.jpg";
+                $unique_name = uniqid('',true).$filename;
+                $folder      = "image/". $unique_name;
+                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+                
+            }else{
+                $unique_name = uniqid('',true).$filename;
+                $folder      = "image/". $unique_name;
+                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+            }
             //SQL INSERT
-            $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+            
 
             $result = mysqli_query($conn, $sql);
 
@@ -251,17 +264,6 @@
                 SET `name`='$title',`category_id`='$category',
                 `quantity`='$quantity',`price`='$price',`description`='$description'
                 WHERE id = $id";
-
-                $result = mysqli_query($conn, $sql);
-
-                //checking if the Query is successful. 
-                if ($result) {
-                    // move_uploaded_file($tempname, $folder);
-                    $_SESSION['message3'] = "Task has been updated successfully !";
-                    header('location: index.php');
-                } else {
-                    echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
-                }
             }
             else{
                 $sql = "UPDATE `products`
@@ -269,8 +271,9 @@
                 `quantity`='$quantity',`price`='$price',`description`='$description',
                 `filename`='$filename'
                 WHERE id = $id";
+            }
 
-                $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($conn, $sql);
 
                 //checking if the Query is successful. 
                 if ($result) {
@@ -280,7 +283,6 @@
                 } else {
                     echo "ERROR: Could not able to execute $sql. " .mysqli_error($conn);
                 }
-            }
         }
     }
 
