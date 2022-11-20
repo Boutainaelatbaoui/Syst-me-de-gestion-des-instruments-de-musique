@@ -34,7 +34,7 @@
                 <div class="col">
                     <div class="card card-form mb-3 m-auto">
                         <div class="row">
-                            <div class="col-md d-none d-lg-block">
+                            <div class="col-sm d-none d-md-block">
                                 <img src="assets/img/music-store.jpg" class="img-fluid rounded-start" alt="Music store">
                             </div>
                             <div class="col-md">
