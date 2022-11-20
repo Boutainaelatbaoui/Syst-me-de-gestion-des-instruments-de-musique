@@ -286,11 +286,11 @@
 							<input  type="hidden" name="product-id" id="product-id">
 							<div class="mb-3">
 								<label class="form-label">Name</label>
-								<input type="text" class="form-control" name="title" id="product-title" required/>
+								<input type="text" class="form-control" name="title" id="product-title" required data-parsley-minlength="3" data-parsley-trigger="keyup"/>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Category</label>
-								<select class="form-select" name="category" id="product-category" required>
+								<select class="form-select" name="category" id="product-category" required data-parsley-trigger="keyup">
 									<option value="">Please select</option>
 									<option value="1">Piano</option>
 									<option value="2">Guitar</option>
@@ -306,11 +306,11 @@
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Price</label>
-                                    <input type="number" class="form-control" name="price" step="0.01" min="1" id="product-price" required/>
+                                    <input type="number" class="form-control" name="price" step="0.01" min="1" id="product-price" required data-parsley-min="1" data-parsley-trigger="keyup"/>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" name="quantity" min="1" id="product-quantity" required/>
+                                    <input type="number" class="form-control" name="quantity" min="1" id="product-quantity" required data-parsley-trigger="keyup"/>
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -319,12 +319,12 @@
                             </div>
 							<div class="mb-0">
 								<label class="form-label">Description</label>
-								<textarea class="form-control" rows="8" name="description" id="product-description" required></textarea>
+								<textarea class="form-control" rows="8" name="description" id="product-description" required data-parsley-minlength="6" data-parsley-trigger="keyup"></textarea>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+						<a href="#" class="btn btn-secondary" data-bs-dismiss="modal" id="product-cancel-btn">Cancel</a>
 						<button type="submit" name="delete" class="btn btn-danger product-action-btn" id="product-delete-btn">Delete</a>
 						<button type="submit" name="update" class="btn btn-warning product-action-btn" id="product-update-btn">Update</a>
 						<button type="submit" name="save" class="btn btn-primary product-action-btn" id="product-save-btn">Save</button>
