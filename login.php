@@ -41,7 +41,7 @@
                                 <div class="card-body">
                                 <form action="scripts.php" method="POST" id="form-task" data-parsley-validate>
                                     <div class="d-flex justify-content-center align-items-center mt-3 h-100">
-                                        <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+                                        <img src="assets/img/logo.png" class="img-fluid img-form" alt="Logo">
                                     </div>
                                     <h5 class="mt-4 mb-3 fw-normal text-white text-center">Please login to your account</h5>
                                     <?php if (isset($_SESSION['message'])): ?>
