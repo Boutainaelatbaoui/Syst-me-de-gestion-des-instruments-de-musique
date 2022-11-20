@@ -61,19 +61,19 @@
                                     <?php endif ?>
                                     <div class="mb-3">
                                         <label for="user-name" class="form-label text-white">Admin name</label>
-                                        <input type="text" name="username" class="form-control" id="user-name" required>
+                                        <input type="text" name="username" class="form-control" id="user-name" required data-parsley-minlength="3" data-parsley-trigger="keyup">
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label text-white">Email address</label>
-                                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required data-parsley-trigger="keyup">
                                     </div>
                                     <div class="mb-3">
                                         <label for="password" class="form-label text-white">Password</label>
-                                        <input type="password" name="password" class="form-control" id="password" required>
+                                        <input type="password" name="password" class="form-control" id="password" required data-parsley-minlength="8" data-parsley-trigger="keyup">
                                     </div>
                                     <div class="mb-4">
                                         <label for="confirm-password" class="form-label text-white">Repeat your password</label>
-                                        <input type="password" name="confirm-password" class="form-control" id="confirm-password" required>
+                                        <input type="password" name="confirm-password" class="form-control" id="confirm-password" data-parsley-equalto="#password" required data-parsley-trigger="keyup">
                                     </div>
                                     <div class="d-grid d-block mb-4">
                                         <button type="submit" name="sign" class="btn btn-danger">Sign up</button>
