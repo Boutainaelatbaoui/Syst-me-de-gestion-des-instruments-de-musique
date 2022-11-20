@@ -37,7 +37,7 @@
             </button>
             <!-- offcanvas trigger -->
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" alt="Bootstrap" width="180" height="40">
+                <img src="assets/img/logo.png" class="img-fluid ps-3" alt="Bootstrap" width="180" height="40">
                 </a>
                 <button class="navbar-toggler btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -143,7 +143,7 @@
         <div class="card welcome-card text-center bx-shadow">
             <div class="card-style"></div>
             <div class="card-body box-card">
-                <span class="card-title"><img src="assets/img/logo.png" alt="Bootstrap" class="image-logo d-flex justify-content-center align-items-center" width="150" height="40"></span>
+                <span class="card-title"><img src="assets/img/logo.png" alt="Bootstrap" class="image-logo img-fluid d-flex justify-content-center align-items-center" width="150" height="40"></span>
                 <p class="card-text fs-5 mt-1">Welcome to <span class="fw-bolder">Rock shop!</span> Are you looking for new music equipment? Here in our online shop, you'll find both inexpensive instruments for beginners
                     and top-class professional equipment. We also offer a wide range of services - both online and in our store.</p>
                 <a href="#modal-product" data-bs-toggle="modal" class="btn btn-dark mb-5" onclick="addProduct()">Add Product</a>
