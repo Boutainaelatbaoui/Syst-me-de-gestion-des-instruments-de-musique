@@ -33,9 +33,8 @@
         $confirm_password = $_POST['confirm-password'];
 
         //Select email from the database to use it for validation
-        $sql = "SELECT email FROM admins";
+        $sql = "SELECT * FROM admins WHERE email='$email'";
         $result = mysqli_query($conn, $sql);
-        $admin = mysqli_fetch_assoc($result);
 
         //Form validation
         if(empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
@@ -47,8 +46,7 @@
             $_SESSION['message1'] = "Password and Confirm password should match!!";
             header('location: registration.php');
         }
-        // in_array($email,$admin)
-        elseif($email == $admin['email']){
+        elseif(mysqli_num_rows($result) > 0){
             //Check if password and confirm password not the same
             $_SESSION['message1'] = "Email already exists!!";
             header('location: registration.php');
@@ -80,17 +78,14 @@
 		    header('location: login.php');
         }
         else{
-            
             //SQL SELECT
-            $sql = "SELECT * FROM admins WHERE email='$email'";
+            $sql = "SELECT * FROM admins WHERE email='$email' AND password='$password'";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0){
-                
-                $admin = mysqli_fetch_assoc($result);
-                if ($admin['email'] === $email && $admin['password'] === $password) {
 
                     $_SESSION['message'] = "Logged in!";
-                    header('location: login.php');
+
+                    $admin = mysqli_fetch_assoc($result);
                     
                     //Create session to store 
                     $_SESSION['name'] = $admin['name'];
@@ -98,16 +93,13 @@
                     $_SESSION['id'] = $admin['id'];
 
                     header('location: index.php');
-                }
-                else{
-                    $_SESSION['message1'] = "Incorect password!!";
-                    header('location: login.php');
-                }
+                    
             }
             else{
-                $_SESSION['message1'] = "Your email doesn't match with our records!";
+                $_SESSION['message1'] = "Your email doesn't match with our records! or Incorect password!!";
                 header('location: login.php');
             }
+        
         }
     }
 
@@ -155,10 +147,15 @@
         global $conn;
         //CODE HERE
         $title       = $_POST['title'];
+        $title       = filter_var($title, FILTER_SANITIZE_STRING);
         $category    = $_POST['category'];
+        $category    = filter_var($category, FILTER_SANITIZE_STRING);
         $price       = $_POST['price'];
+        $price       = filter_var($price, FILTER_SANITIZE_STRING);
         $quantity    = $_POST['quantity'];
+        $quantity    = filter_var($quantity, FILTER_SANITIZE_STRING);
         $description = $_POST['description'];
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
         $filename    = $_FILES["picture"]["name"];
         $tempname    = $_FILES["picture"]["tmp_name"];
     
@@ -175,7 +172,7 @@
                 $filename = "MUSIC.jpg";
                 $unique_name = uniqid('',true).$filename;
                 $folder      = "./image/". $unique_name;
-                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$unique_name')";
+                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
                 
             }else{
                 $unique_name = uniqid('',true).$filename;
@@ -244,10 +241,15 @@
         //CODE HERE
         $id          = $_POST['product-id'];
         $title       = $_POST['title'];
+        $title       = filter_var($title, FILTER_SANITIZE_STRING);
         $category    = $_POST['category'];
+        $category    = filter_var($category, FILTER_SANITIZE_STRING);
         $price       = $_POST['price'];
+        $price       = filter_var($price, FILTER_SANITIZE_STRING);
         $quantity    = $_POST['quantity'];
+        $quantity    = filter_var($quantity, FILTER_SANITIZE_STRING);
         $description = $_POST['description'];
+        $description = filter_var($description, FILTER_SANITIZE_STRING);
         $filename    = $_FILES["picture"]["name"];
         $tempname    = $_FILES["picture"]["tmp_name"];
         $unique_name = uniqid('',true).$filename;
