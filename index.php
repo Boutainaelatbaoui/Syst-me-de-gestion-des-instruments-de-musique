@@ -3,7 +3,7 @@
 ?>
 
 <?php 
-    if(empty($_SESSION['name'])){
+    if(!isset($_SESSION['name'])){
         header('location: login.php');
     }
 ?>
@@ -195,7 +195,7 @@
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
                         <div><i class="bi bi-cash fs-3 text-danger text-center"></i></div>
                         <div class="text-truncate">
-                            <h5 class="card-title">Total Prices</h5>
+                            <h5 class="card-title">Min Price</h5>
                             <p class="card-text fs-5"><?php statisqueVente(4); ?> $</p>
                         </div>
                     </div>
