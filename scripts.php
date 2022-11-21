@@ -137,7 +137,7 @@
                 id="'.$row["id"].'" title="'.$row["name"].'" category="'.$row["category_id"].'" quantity="'.$row["quantity"].'"
                 price="'.$row["price"].'" description="'.$row["description"].'" picture="'.$row['filename'].'"
                 onclick="editTask('.$row["id"].')">
-                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(image/'.$row['filename'].');"></div>
+                    <div style="height: 300px; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url(\'image/'.$row['filename'].'\');"></div>
                     <div class="card-body">
                         <h5 class="card-title text-center text-truncate fw-bolder mb-3 ">'.$row["name"].'</h5>
                         <p class="card-text text-start"><span class="fw-bold text-muted">Category: </span>'.$row["category"].'</p>
@@ -174,13 +174,13 @@
             if(empty($filename)){
                 $filename = "MUSIC.jpg";
                 $unique_name = uniqid('',true).$filename;
-                $folder      = "image/". $unique_name;
-                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+                $folder      = "./image/". $unique_name;
+                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$unique_name')";
                 
             }else{
                 $unique_name = uniqid('',true).$filename;
-                $folder      = "image/". $unique_name;
-                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
+                $folder      = "./image/". $unique_name;
+                $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$unique_name')";
             }
             //SQL INSERT
             
@@ -230,7 +230,7 @@
         }
 
         else{
-            $sql = "SELECT sum(price * quantity) as prices
+            $sql = "SELECT min(price) as prices
                     FROM products";
 
             $result = mysqli_query($conn, $sql);
@@ -250,7 +250,8 @@
         $description = $_POST['description'];
         $filename    = $_FILES["picture"]["name"];
         $tempname    = $_FILES["picture"]["tmp_name"];
-        $folder      = "image/". $filename;
+        $unique_name = uniqid('',true).$filename;
+        $folder      = "./image/". $unique_name;
 
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
@@ -269,7 +270,7 @@
                 $sql = "UPDATE `products`
                 SET `name`='$title',`category_id`='$category',
                 `quantity`='$quantity',`price`='$price',`description`='$description',
-                `filename`='$filename'
+                `filename`='$unique_name'
                 WHERE id = $id";
             }
 
