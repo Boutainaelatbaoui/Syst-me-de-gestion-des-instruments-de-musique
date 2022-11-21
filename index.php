@@ -1,6 +1,13 @@
 <?php
-    include('scripts.php');
+    include('scripts.php'); 
 ?>
+
+<?php 
+    if(empty($_SESSION['name'])){
+        header('location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
