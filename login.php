@@ -1,6 +1,11 @@
 <?php
     include('scripts.php');
 ?>
+<?php 
+    if(isset($_SESSION['name'])){
+        header('location: index.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
