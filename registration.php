@@ -60,7 +60,7 @@
                                         </div>
                                     <?php endif ?>
                                     <div class="mb-3">
-                                        <label for="user-name" class="form-label text-white">Admin name</label>
+                                        <label for="user-name" class="form-label text-white">Name</label>
                                         <input type="text" name="username" class="form-control" id="user-name" required data-parsley-minlength="3" data-parsley-trigger="keyup">
                                     </div>
                                     <div class="mb-3">
