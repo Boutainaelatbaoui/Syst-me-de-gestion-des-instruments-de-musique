@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 20 nov. 2022 à 13:56
+-- Généré le : mer. 23 nov. 2022 à 21:34
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 7.4.29
 
@@ -40,11 +40,9 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`) VALUES
 (15, 'hybexifam', 'mewiduzamu@mailinator.com', 'Pa$$w0rd!'),
-(16, 'piwapitoc', 'qene@mailinator.com', 'Pa$$w0rd!'),
-(17, 'veqerom', 'dymewijopo@mailinator.com', 'Pa$$w0rd!'),
-(18, 'ducimovoqi', 'midoge@mailinator.com', 'Pa$$w0rd!'),
-(19, 'Boutaina El Atbaoui', 'juhycuqivu@mailinator.com', 'Pa$$w0rd!'),
-(20, 'sinelabeb', 'xizuzog@mailinator.com', 'Pa$$w0rd!');
+(42, 'boutaina', 'ahmed@gmail.com', '12345678'),
+(45, 'mchermla', 'boutaina.elatbaoui@gmail.com', 'boutaina'),
+(46, 'adnane khayrou', 'adnane@gmail.com', 'adnanekhayrou');
 
 -- --------------------------------------------------------
 
@@ -83,7 +81,7 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `price` decimal(4,2) NOT NULL,
+  `price` float NOT NULL,
   `description` text NOT NULL,
   `filename` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -93,7 +91,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES
-(15, 'Non dolor maxime par', 6, 249, '99.99', 'Nisi exercitation qu', 'guitar.jpg');
+(58, 'Pariatur Deleniti i', 3, 838, 510, 'Praesentium esse ull', '637e4ceeb83a34.71315328violin.jpg'),
+(59, 'Quia voluptatem Per', 2, 788, 796, 'Aliquid neque facere', 'MUSIC.jpg');
 
 --
 -- Index pour les tables déchargées
@@ -126,7 +125,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT pour la table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
@@ -138,7 +137,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Contraintes pour les tables déchargées
