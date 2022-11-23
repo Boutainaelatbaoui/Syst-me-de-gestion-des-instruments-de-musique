@@ -49,6 +49,7 @@ div.card-form{
     top: 59px;
 } */
 
+
 .img-form {
     min-height: -webkit-fill-available !important;
 }
@@ -80,7 +81,7 @@ main {
 }
 
 .modal-content {
-    background-color: rgb(252, 250, 250) !important;
+    background-color: #fcfafa !important;
 }
 
 .btn-close{
@@ -122,4 +123,5 @@ main {
         height: calc(100% - var(--topNavbarHeight)) !important;
     }
 }
+
 
