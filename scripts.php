@@ -26,7 +26,7 @@
 
     function registerAdmin(){
         global $conn;
-        //CODE HERE 
+ 
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -68,7 +68,7 @@
     function loginAdmin() {
         
         global $conn;
-        //CODE HERE 
+
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -112,7 +112,6 @@
 
     function getProducts(){
         global $conn;
-        //CODE HERE
         //SQL SELECT
         $sql = "SELECT products.*,
                 categories.name as `category`
@@ -159,9 +158,6 @@
         $filename    = $_FILES["picture"]["name"];
         $tempname    = $_FILES["picture"]["tmp_name"];
     
-        //unique id img
-        
-
         //Form validation
         if(empty($title) || empty($category) || empty($price) || empty($quantity) || empty($description)) {
             $_SESSION['message2'] = "Please fill the form !";
@@ -170,8 +166,7 @@
         else {
             if(empty($filename)){
                 $filename = "MUSIC.jpg";
-                $unique_name = uniqid('',true).$filename;
-                $folder      = "./image/". $unique_name;
+                $folder      = "./image/". $filename;
                 $sql = "INSERT INTO `products`(`name`, `category_id`, `quantity`, `price`, `description`, `filename`) VALUES ('$title','$category','$quantity','$price','$description', '$filename')";
                 
             }else{
